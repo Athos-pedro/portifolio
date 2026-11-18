@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio - Athos Pedro | Engenharia de Software</title>
+  <meta name="description" content="Portfólio de Athos Pedro, estudante de Engenharia de Software.">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="cabecalho">
+    <div class="cabecalho__topo">
+      <div>
+        <h1>Athos Pedro</h1>
+        <p>Estudante de Engenharia de Software</p>
+      </div>
+      <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+    </div>
+
+    <nav aria-label="Principal">
+      <ul class="menu" id="menu">
+        <li><a href="#sobre">Sobre mim</a></li>
+        <li><a href="#conhecimentos">Conhecimentos</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo" tabindex="-1">
+
+    <section id="sobre" class="secao">
+      <h2>Sobre mim</h2>
+      <p>
+        Sou Athos Pedro, estudante de Engenharia de Software.
+        <strong>Objetivo:</strong> conseguir um estágio ou projeto freelance
+        em desenvolvimento web, onde eu possa aprender com uma equipe
+        e contribuir com interfaces simples e acessíveis.
+      </p>
+      <p>
+        <strong>Trajetória:</strong> comecei na programação com Java e
+        banco de dados no curso e agora estou aprendendo front-end
+        (HTML, CSS e JavaScript), usando Git e GitHub.
+      </p>
+    </section>
+
+    <section id="conhecimentos" class="secao">
+      <h2>Conhecimentos</h2>
+
+      <div class="tabela-rolavel">
+        <table>
+          <caption>Habilidades e onde as utilizei</caption>
+          <thead>
+            <tr>
+              <th>Tecnologia</th>
+              <th>Nível</th>
+              <th>Onde usei</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th>HTML e CSS</th><td>Iniciante</td><td>Este portfólio e páginas de aula</td></tr>
+            <tr><th>JavaScript</th><td>Iniciante</td><td>Filtro de projetos e formulário</td></tr>
+            <tr><th>Java</th><td>Iniciante</td><td>Programa de cálculo de notas</td></tr>
+            <tr><th>Banco de dados</th><td>Iniciante</td><td>Exercícios de modelagem e consultas</td></tr>
+            <tr><th>Git e GitHub</th><td>Iniciante</td><td>Versionamento dos projetos</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="projetos" class="secao">
+      <h2>Projetos</h2>
+      <p>Projetos desenvolvidos em disciplinas do curso.</p>
+
+      <div class="filtros" id="filtros" role="group" aria-label="Filtrar projetos por tecnologia"></div>
+
+      <p id="contagem" class="contagem" role="status" aria-live="polite"></p>
+
+      <div class="cards" id="lista-projetos"></div>
+
+      <p id="sem-resultados" class="aviso" hidden>
+        Nenhum projeto encontrado para este filtro.
+        Escolha outra tecnologia ou selecione “Todos”.
+      </p>
+    </section>
+
+    <section id="contato" class="secao">
+      <h2>Contato</h2>
+
+      <p>
+        Canal direto:
+        <a href="mailto:athos.magalhaes@ucsal.edu.br">athos.magalhaes@ucsal.edu.br</a> ·
+        <a href="https://github.com/Athos-pedro" target="_blank" rel="noopener noreferrer">GitHub</a> ·
+        <a href="https://www.linkedin.com/search/results/people/?keywords=Athos%20Magalh%C3%A3es" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </p>
+
+      <form id="form-contato" novalidate>
+
+        <div id="resumo-erros" class="resumo-erros" role="alert" tabindex="-1" hidden></div>
+
+        <div class="campo">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" required autocomplete="name" aria-describedby="erro-nome">
+          <small id="erro-nome" class="erro" hidden></small>
+        </div>
+
+        <div class="campo">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required autocomplete="email" aria-describedby="ajuda-email erro-email">
+          <small id="ajuda-email">Obrigatório. Verificamos apenas o formato.</small>
+          <small id="erro-email" class="erro" hidden></small>
+        </div>
+
+        <div class="campo">
+          <label for="motivo">Motivo do contato</label>
+          <select id="motivo" name="motivo" required aria-describedby="ajuda-motivo erro-motivo">
+            <option value="">Selecione um motivo</option>
+            <option value="Oportunidade profissional">Oportunidade profissional</option>
+            <option value="Projeto freelance">Projeto freelance</option>
+            <option value="Outro">Outro</option>
+          </select>
+          <small id="ajuda-motivo">Escolha uma das opções.</small>
+          <small id="erro-motivo" class="erro" hidden></small>
+        </div>
+
+        <div class="campo" id="campo-assunto" hidden>
+          <label for="assunto">Assunto adicional</label>
+          <input type="text" id="assunto" name="assunto" disabled aria-describedby="ajuda-assunto erro-assunto">
+          <small id="ajuda-assunto">Obrigatório para “Outro”, de 5 a 100 caracteres.</small>
+          <small id="erro-assunto" class="erro" hidden></small>
+        </div>
+
+        <div class="campo">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="5" required aria-describedby="erro-mensagem"></textarea>
+          <small id="erro-mensagem" class="erro" hidden></small>
+        </div>
+
+        <div class="campo campo--teste">
+          <label for="modo-teste">Controle de teste</label>
+          <select id="modo-teste">
+            <option value="sucesso">Simular sucesso</option>
+            <option value="falha">Simular falha</option>
+          </select>
+        </div>
+
+        <button type="submit" class="botao" id="btn-enviar">Enviar</button>
+
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+
+      </form>
+    </section>
+
+  </main>
+
+  <aside class="extra">
+    <h2>Informações extras</h2>
+    <ul>
+      <li>Interesse: tecnologia e desenvolvimento web</li>
+      <li>Área: programação</li>
+      <li>Objetivo: aprender e ganhar experiência</li>
+    </ul>
+  </aside>
+
+  <footer>
+    <p>Athos Pedro - 2026</p>
+    <p>Atividade de Programação Front-End</p>
+  </footer>
+
+</body>
+</html>

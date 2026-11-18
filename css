@@ -1,0 +1,232 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f5f9;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+
+.cabecalho {
+  background-color: #0f172a;
+  color: white;
+  padding: 25px;
+}
+
+.cabecalho__topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cabecalho h1 {
+  font-size: 30px;
+}
+
+.menu-toggle {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+.menu {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  margin-top: 20px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  color: #38bdf8;
+}
+
+
+main {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.secao {
+  background-color: white;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #00000012;
+}
+
+.secao h2 {
+  color: #2563eb;
+  margin-bottom: 15px;
+}
+
+
+.tabela-rolavel {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  border: 1px solid #cbd5e1;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #dbeafe;
+}
+
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.filtros button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+.filtros button:hover {
+  background-color: #1d4ed8;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.campo label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input, select, textarea {
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 15px;
+  width: 100%;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid #2563eb;
+}
+
+.botao {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.botao:hover {
+  background-color: #1d4ed8;
+}
+
+.erro {
+  color: #dc2626;
+}
+
+.resumo-erros {
+  color: #dc2626;
+  margin-bottom: 15px;
+}
+
+.status {
+  margin-top: 15px;
+}
+
+
+.extra {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 25px;
+  background-color: #dbeafe;
+  border-radius: 10px;
+}
+
+
+footer {
+  background-color: #0f172a;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+
+.pular {
+  position: absolute;
+  left: -9999px;
+}
+
+.pular:focus {
+  left: 10px;
+  top: 10px;
+  background: white;
+  padding: 10px;
+}
+
+
+@media (max-width: 600px) {
+  .cabecalho__topo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  main {
+    padding: 12px;
+  }
+
+  .secao {
+    padding: 18px;
+  }
+}
